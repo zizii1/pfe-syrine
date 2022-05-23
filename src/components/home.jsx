@@ -1,24 +1,22 @@
 import React from "react";
 import "./home.css";
+import Navbar from "./navbar";
 
 const Home = () => {
   return (
-    <div className="threeBtns">
-      <button id="foot">
-        <button className="homeBtn" class="button-os">
-          <a href="#">Create a new case</a>
+    <div>
+      <Navbar />
+      <div className="homeBtns">
+        <button id="homeIdBtn" className="big-button">
+          Create a new case
         </button>
-      </button>
-      <button id="foot">
-        <button className="homeBtn" class="button-os">
-          <a href="#">Work on current case</a>
+        <button id="homeIdBtn" className="big-button">
+          Work on current case
         </button>
-      </button>
-      <button id="foot">
-        <button className="homeBtn" class="button-os">
-          <a href="#">View a case advancement</a>
+        <button id="homeIdBtn" className="big-button">
+          View a case advancement
         </button>
-      </button>
+      </div>
     </div>
   );
 };

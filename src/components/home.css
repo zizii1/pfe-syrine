@@ -1,73 +1,66 @@
-.threeBtns {
-  height: 100vh;
-  width: 70vw;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+:root {
+  --backgroundColor: rgba(246, 241, 209);
+  --colorShadeA: rgb(126, 76, 160);
+  --colorShadeB: rgb(99, 61, 124);
+  --colorShadeC: rgb(195, 150, 232);
+  --colorShadeD: rgb(210, 187, 232);
+  --colorShadeE: rgb(237, 205, 255);
 }
 
-.homeBtn {
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 0 8px rgb(207, 207, 207);
-}
-
-.homeBtn:hover {
-  border: none;
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: inset 0 0 8px #f9f8fc;
-}
-
-#foot {
+#homeIdBtn {
   position: relative;
-  top: 15px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  border: none;
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: 0 0 8px #d9d4e7;
-  width: 200px;
-  height: 65px;
-  background-color: #d9d4e7;
-  animation-duration: 5s;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--colorShadeA);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: inherit;
 }
 
-.button-os {
+#homeIdBtn.big-button {
+  padding: 1em 2em;
+  border: 2px solid var(--colorShadeA);
+  border-radius: 1em;
+  background: var(--colorShadeE);
+  transform-style: preserve-3d;
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+#homeIdBtn.big-button::before {
   position: absolute;
-  width: 200px;
-  height: 65px;
+  content: "";
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
-  background-color: #f9f8fc;
-  border: 2.5px solid #0e172c;
-  transition: background-color 2.2s;
-  transition-duration: 3s;
-  transition: 1.5s;
+  background: var(--colorShadeC);
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
-.button-os:hover {
-  position: absolute;
-  top: 30px;
-  background-color: #fec7d7;
+#homeIdBtn.big-button:hover {
+  background: var(--colorShadeD);
+  transform: translate(0, 0.375em);
 }
 
-.button-os a {
-  font-size: 20px;
-  display: block;
-  text-decoration: none;
-  color: #0e172c;
-  transition: 1.5s;
+#homeIdBtn.big-button:hover::before {
+  transform: translate3d(0, 0.75em, -1em);
 }
 
-.button-os a:hover {
-  letter-spacing: 5px;
+#homeIdBtn.big-button:active {
+  transform: translate(0em, 0.75em);
+}
+
+#homeIdBtn.big-button:active::before {
+  transform: translate3d(0, 0, -1em);
+
+  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
 }
