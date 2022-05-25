@@ -6,7 +6,9 @@
   --colorShadeD: rgb(210, 187, 232);
   --colorShadeE: rgb(237, 205, 255);
 }
-
+.homeBtns {
+  margin-top: 18%;
+}
 #homeIdBtn {
   position: relative;
   display: inline-block;

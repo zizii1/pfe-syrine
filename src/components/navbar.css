@@ -1,35 +1,22 @@
 .navMenu {
-  position: absolute;
-  top: 7%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-bottom: -3vw;
+  gap: 350px;
+}
+.navItems:hover {
+  color: rgb(255, 25, 140);
 }
 
-.navMenu a {
-  color: #f6f4e6;
-  text-decoration: none;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  font-weight: 500;
-  display: inline-block;
-  width: 80px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+.navItems {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  height: 100px;
 }
-
-.navMenu a:hover {
-  color: #fd3ad3;
-}
-
-.navMenu .dot {
-  width: 6px;
-  height: 6px;
-  background: #fd3ad3;
-  border-radius: 50%;
-  opacity: 0;
-  -webkit-transform: translateX(30px);
-  transform: translateX(30px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+.logoNav {
+  height: 120%;
+  margin-top: -3%;
 }
