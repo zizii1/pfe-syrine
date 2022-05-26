@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 
@@ -14,24 +15,60 @@ const Login = () => {
   const [contact, setcontact] = useState("");
   const [signUpEmail, setsignUpEmail] = useState("");
   const [signInPass, setsignInPass] = useState("");
+
+  const [signUpUser, setsignUpUser] = useState({
+    firstName: "",
+    lastName: "",
+    organization: "",
+    country: "",
+    department: "",
+    password: "",
+    confirmePassword: "",
+    email: "",
+    contact: "",
+  });
+
   let navigate = useNavigate();
 
   const logIn = () => {
-    console.log(signInEmail);
-    console.log(signInPass);
-    navigate("/home", { replace: true });
+    axios
+      .get("http://localhost:5000/api/user/findAll")
+      .then((res) => {
+        res.data.map((ele) => {
+          if (
+            ele.email == signInEmail &&
+            ele.password == signInPass &&
+            ele.confirmePassword == signInPass
+          ) {
+            navigate("/home", { replace: true });
+            localStorage.setItem("firstName", ele.firstName);
+            localStorage.setItem("id", ele._id);
+            localStorage.setItem("date", ele.date);
+          }
+        });
+      })
+      .catch((err) => console.log(err));
   };
 
   const signUp = () => {
-    console.log(firstname);
-    console.log(lastname);
-    console.log(organization);
-    console.log(country);
-    console.log(department);
-    console.log(password);
-    console.log(confirmePass);
-    console.log(contact);
-    console.log(signUpEmail);
+    var user = {
+      firstName: firstname,
+      lastName: lastname,
+      organization: organization,
+      country: country,
+      department: department,
+      password: password,
+      confirmePassword: confirmePass,
+      email: signUpEmail,
+      contact: contact,
+    };
+    axios
+      .post("http://localhost:5000/api/user/add", user)
+      .then((res) => {
+        setsignUpUser(res.data);
+        console.log("user added successfully !");
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

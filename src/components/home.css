@@ -5,9 +5,13 @@
   --colorShadeC: rgb(195, 150, 232);
   --colorShadeD: rgb(210, 187, 232);
   --colorShadeE: rgb(237, 205, 255);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .homeBtns {
   margin-top: 18%;
+  margin-left: 6%;
 }
 #homeIdBtn {
   position: relative;

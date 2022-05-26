@@ -1,6 +1,6 @@
 import React from "react";
 import "./navbar.css";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
@@ -12,10 +12,13 @@ const Navbar = () => {
           />
         </div>
         <div className="navItems">
-          <h2>User</h2>
+          <h2>{localStorage.getItem("firstName")}</h2>
+          <p>{localStorage.getItem("id")}</p>
         </div>
         <div className="navItems">
-          <h2>Logout</h2>
+          <Link to="/">
+            <h2 className="logout">Logout</h2>
+          </Link>
         </div>
       </div>
     </div>
