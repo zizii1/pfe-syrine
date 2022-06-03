@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>
+            Update case
+        </title>
+    </head>
+
+    <body>
+        <a href="/uploads/{{file_name}}">Download File</a>
+        <table>
+            {%for x in descriptions%}
+            <tr>
+                <td>Updated by : {{x["updated_by"]}}</td>
+                <td>Updated at : {{x["updated_at"]}}</td>
+                <td>Description : {{x["description"]}}</td>
+                <td>Vote of approval : {{x["vote_app"]}}</td>
+                <td>Vote of denial : {{x["vote_den"]}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+    </body>
+</html>

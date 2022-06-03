@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            Cases List
+        </title>
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <th>Created By</th>
+                <th>Created At</th>
+                <th>File Hash</th>
+                <th>Vote</th>
+            </tr>
+            {%for x in cases%}
+            <tr>
+                <td>{{x["created_by"]}}</td>
+                <td>{{x["created_at"]}}</td>
+                <td>{{x["file_hash"]}}</td>
+                <td><a href="/vote_case/{{x['index']}}">Vote</a></td>
+            </tr>
+            {%endfor%}
+        </table>
+    </body>
+</html>

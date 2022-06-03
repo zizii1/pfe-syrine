@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>
+            Dashboard
+        </title>
+    </head>
+
+    <body>
+        <h3>Welcome {{username}}</h3>
+        {%for el in links%}
+        <a href="{{el['link']}}">{{el["field"]}}</a>
+        {%endfor%}
+        <br>
+        <a href="/logout">logout</a>
+    </body>
+</html>
